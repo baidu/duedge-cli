@@ -1,0 +1,54 @@
+**命令**
+ update-function-code
+
+**功能说明**
+ 更新指定function代码
+
+**其中FunctionName为函数名称，Qualifier为非必传参数(代表版本号version)，如果Qualifier不传的话默认取$LATEST版本**
+**返回参数**
++--------------+----------+------------------+
+| 参数名称     | 参数类型 | 参数说明         |
++--------------+----------+------------------+
+| errors       | list     | 错误信息         |
+| request_uuid | string   | 请求uuid         |
+| result       | dict     | 资源详情         |
+| success      | bool     | 请求成功与否标志 |
++--------------+----------+------------------+
+
+**请求参数**
++----------+----------+----------------------------------------+
+| 参数名称      | 参数类型 | 参数说明                          |
++---------------+----------+-----------------------------------+
+| zip-file      | blob     | Base64-encoded binary data object |
++---------------+----------+-----------------------------------+
+| function-name | blob     | 函数名称                          |
++---------------+----------+-----------------------------------+
+
+**请求参数**
+{
+    "zip-file": "mycode.zip",
+    "function-name": "test"
+}
+**返回结果**
+{
+	"errors": [],
+	"request_uuid": null,
+	"result": {
+		"Description": "test api",
+		"FunctionBrn": "brn:bce:cfc:bj:cd64f99c69d7c404b61de0a4f1865834:function:fly-hello-001:3",
+		"Region": "bj",
+		"Timeout": 5,
+		"FunctionName": "fly-hello-001",
+		"Handler": "index.handler",
+		"Version": "3",
+		"Runtime": "python2",
+		"MemorySize": 128,
+		"Environment": {
+			"Variables": {
+				"additionalProp1": "string"
+			}
+		},
+		"CommitId": "dc901628-44b9-4b29-91e2-feaccc3f5099"
+	},
+	"success": true
+}

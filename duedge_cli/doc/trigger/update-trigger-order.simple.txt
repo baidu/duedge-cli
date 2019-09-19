@@ -1,0 +1,33 @@
+NAME
+    update-trigger-order -
+
+DESCRIPTION
+    调整触发器优先级顺序
+
+SYNOPSIS
+      update-trigger-order
+    --trigger <int>
+    --step <int>
+
+OPTIONS
+    --trigger (int)
+        触发器id
+    --step (int)
+        调整这个绑定规则的优先级顺序，若step>0，则这条规则优先级降低相应位次； 若step<0，则这条规则的优先级提高相应位次
+
+OUTPUT
+    参数名称 -> (参数类型)
+        参数说明
+
+    errors -> (list)
+        错误信息
+
+    request_uuid -> (string)
+        请求uuid
+
+    result -> (dict)
+        资源详情
+
+    success -> (bool)
+        请求成功与否标志
+

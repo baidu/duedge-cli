@@ -1,0 +1,38 @@
+NAME
+    update-trigger -
+
+DESCRIPTION
+    修改触发器
+
+SYNOPSIS
+      update-trigger
+    --trigger <int>
+    [--regular <string>]
+    [--description <string>]
+
+OPTIONS
+    --trigger (int)
+        触发器id
+        
+    --regular (string)
+        节点调用函数计算时正则匹配条件
+
+    --description (string)
+        规则的描述信息
+
+OUTPUT
+    参数名称 -> (参数类型)
+        参数说明
+
+    errors -> (list)
+        错误信息
+
+    request_uuid -> (string)
+        请求uuid
+
+    result -> (dict)
+        资源详情
+
+    success -> (bool)
+        请求成功与否标志
+

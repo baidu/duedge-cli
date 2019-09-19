@@ -1,0 +1,27 @@
+NAME
+    delete-trigger -
+
+DESCRIPTION
+    删除某条具体的触发器
+
+SYNOPSIS
+      delete-trigger
+    --trigger <int>
+
+OPTIONS
+    --trigger (int)
+        触发器id
+        
+OUTPUT
+    errors -> (list)
+        错误信息
+
+    request_uuid -> (string)
+        请求uuid
+
+    result -> (dict)
+        资源详情
+
+    success -> (bool)
+        请求成功与否标志
+

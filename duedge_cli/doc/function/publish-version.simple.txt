@@ -1,0 +1,33 @@
+NAME
+    publish-version -
+
+DESCRIPTION
+    发布函数版本
+
+SYNOPSIS
+      publish-version
+    --function-name <string>
+    [--description <string>]
+
+OPTIONS
+    --function-name (string)
+        函数名称
+    --description (string)
+        版本描述
+
+OUTPUT
+    参数名称 -> (参数类型)
+        参数说明
+
+    errors -> (list)
+        错误信息
+
+    request_uuid -> (string)
+        请求uuid
+
+    result -> (dict)
+        资源详情
+
+    success -> (bool)
+        请求成功与否标志
+

@@ -1,0 +1,45 @@
+**命令**
+ get-function
+
+**功能说明**
+ 查询用户单个函数
+
+**其中FunctionName为函数名称，Qualifier为非必传参数(代表版本号version)，如果Qualifier不传的话默认取$LATEST版本**
+**返回参数**
++--------------+----------+------------------+
+| 参数名称     | 参数类型 | 参数说明         |
++--------------+----------+------------------+
+| errors       | list     | 错误信息         |
+| request_uuid | string   | 请求uuid         |
+| result       | dict     | 资源详情         |
+| success      | bool     | 请求成功与否标志 |
++--------------+----------+------------------+
+
+**请求示例**
+**返回结果**
+{
+	"errors": [],
+	"request_uuid": "",
+	"result": {
+		"Code": {
+		},
+		"Configuration": {
+			"Description": "测试",
+			"FunctionBrn": "brn:bce:cfc:bj:1a2cbf55b97ac8a7c760c4177db4e17d:function:sltest:1",
+			"Region": "bj",
+			"Timeout": 3,
+			"CodeSha256": "PsaumhqjY3Sy76xdA9j+SZJw1XjFBT5zUq0rIUUZUrw=",
+			"FunctionName": "sltest",
+			"Handler": "index.handler",
+			"Version": "1",
+			"Runtime": "python2",
+			"MemorySize": 128,
+			"Environment": {
+				"Variables": {
+					"": ""
+				}
+			},
+			"CommitId": "349dd8a4-db7d-4fc3-a4cd-8c8b482e00c3"
+		}
+	}
+}

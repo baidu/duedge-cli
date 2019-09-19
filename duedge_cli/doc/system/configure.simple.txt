@@ -1,0 +1,22 @@
+NAME
+    configure -
+
+DESCRIPTION
+    配置DuEdge命令行工具的本地用户信息
+    在使用DuEdge命令行工具前，请先执行此命令
+
+SYNOPSIS
+      configure
+    --access-key <string>
+    --secret-key <string>
+
+OPTIONS
+    --access-key (string)
+        用户唯一标识(由DuEdge提供)
+        
+    --secret-key (string)
+        用户秘钥(由DuEdge提供)
+
+OUTPUT
+        执行的结果信息
+

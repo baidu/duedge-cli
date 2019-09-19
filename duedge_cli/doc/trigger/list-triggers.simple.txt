@@ -1,0 +1,23 @@
+NAME
+    list-triggers -
+
+DESCRIPTION
+    查询用户创建的所有触发器
+
+SYNOPSIS
+      list-triggers
+
+OPTIONS
+OUTPUT
+    errors -> (list)
+        错误信息
+
+    request_uuid -> (string)
+        请求uuid
+
+    result -> (dict)
+        资源详情
+
+    success -> (bool)
+        请求成功与否标志
+

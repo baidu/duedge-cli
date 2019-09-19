@@ -1,0 +1,14 @@
+NAME
+    update -
+
+DESCRIPTION
+    更新DuEdge命令行工具
+
+SYNOPSIS
+      update
+
+OPTIONS
+
+OUTPUT
+        更新的结果信息
+

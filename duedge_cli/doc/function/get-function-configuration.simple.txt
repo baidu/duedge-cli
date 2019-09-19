@@ -1,0 +1,27 @@
+NAME
+    get-function-configuration -
+
+DESCRIPTION
+    查询函数的配置信息
+
+SYNOPSIS
+      get-function-configuration
+    --function-name <string>
+
+OPTIONS
+    --function-name (string)
+        函数名称
+        
+OUTPUT
+    errors -> (list)
+        错误信息
+
+    request_uuid -> (string)
+        请求uuid
+
+    result -> (dict)
+        资源详情
+
+    success -> (bool)
+        请求成功与否标志
+

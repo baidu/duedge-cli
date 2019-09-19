@@ -1,0 +1,64 @@
+**命令**
+ update-function-configuration
+
+**功能说明**
+ 修改函数配置
+
+**其中FunctionName为函数名称，Qualifier为非必传参数(代表版本号version)，如果Qualifier不传的话默认取$LATEST版本**
+**请求参数**
++-------------+----------+----------+------------------+
+| 参数名称    | 是否必填 | 参数类型 | 参数说明         |
++-------------+----------+----------+------------------+
+| timeout     | 否       | int      | 超时时间         |
+| description | 否       | string   | 一个简短的说明。 |
+| handler     | 否       | string   | 入口             |
+| runtime     | 否       | string   | 运行语言         |
+| environment | 否       | dict     | 环境变量         |
+| code        | 否       | string   | 代码相关         |
+| memory-size | 否       | int      | 内存大小         |
++-------------+----------+----------+------------------+
+
+**返回参数**
++--------------+----------+------------------+
+| 参数名称     | 参数类型 | 参数说明         |
++--------------+----------+------------------+
+| errors       | list     | 错误信息         |
+| request_uuid | string   | 请求uuid         |
+| result       | dict     | 资源详情         |
+| success      | bool     | 请求成功与否标志 |
++--------------+----------+------------------+
+
+**请求参数**
+{
+    "Code": {
+    },
+    "Description": "test api",
+    "Environment": {
+        "Variables": {
+            "additionalProp1": "string"
+        }
+    },
+    "FunctionName": "fly-hello-001",
+    "Handler": "index.handler",
+    "MemorySize": 128,
+    "Runtime": "python2",
+    "Timeout": 5
+}
+**返回结果**
+{
+	"errors": [],
+	"result": {
+		"Description": "test api",
+		"FunctionBrn": "brn:bce:cfc:bj:cd64f99c69d7c404b61de0a4f1865834:function:fly-hello-001:$LATEST",
+		"Region": "bj",
+		"Timeout": 5,
+		"FunctionName": "fly-hello-001",
+		"Handler": "index.handler",
+		"Version": "$LATEST",
+		"Runtime": "python2",
+		"MemorySize": 128,
+		"Environment": {},
+		"CommitId": "4e478a27-8f4a-4b7f-96e1-dc7923512f7b",
+	},
+	"success": true
+}

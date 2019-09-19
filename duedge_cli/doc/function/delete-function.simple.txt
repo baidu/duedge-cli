@@ -1,0 +1,30 @@
+NAME
+    delete-function -
+
+DESCRIPTION
+    删除函数
+
+SYNOPSIS
+      delete-function
+    --function-name <string>
+    --version <string>
+
+OPTIONS
+    --function-name (string)
+        函数名称
+        
+    --version (string)
+        函数版本，当只有一个$LATEST版本时无法删除
+OUTPUT
+    errors -> (list)
+        错误信息
+
+    request_uuid -> (string)
+        请求uuid
+
+    result -> (dict)
+        资源详情
+
+    success -> (bool)
+        请求成功与否标志
+

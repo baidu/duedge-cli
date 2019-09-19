@@ -1,0 +1,33 @@
+NAME
+    update-function-code -
+
+DESCRIPTION
+    更新指定function代码
+
+SYNOPSIS
+      update-function-code
+    --zip-file <string>
+    --function-name <string>
+
+OPTIONS
+    --zip-file (string)
+        包含函数内容的zip包的文件名
+
+    --function-name (string)
+        函数名称
+OUTPUT
+    errors -> (list)
+        错误信息
+
+    request_uuid -> (string)
+        请求uuid
+
+    result -> (dict)
+        资源详情
+
+    success -> (bool)
+        请求成功与否标志
+
+    参数名称 -> (参数类型)
+        参数说明
+

@@ -1,0 +1,82 @@
+NAME
+    create-function -
+
+DESCRIPTION
+    DuEdge上创建用户自定义函数
+
+SYNOPSIS
+      create-function
+    --zip-file <string>
+    --function-name <string>
+    --runtime <string>
+    --handler <string>
+    [--description <string>]
+    [--environment <dict>]
+
+OPTIONS
+    --zip-file (string)
+        包含函数内容的zip包的文件名
+
+    --function-name (string)
+        函数名称，命名必须符合正则 ^[a-zA-Z0-9_-]+$
+
+    --runtime (string)
+        运行时环境，python2、nodejs8.5、java8
+
+    --handler (string)
+        函数调用的入口，格式为"文件名.方法名"，如填写 "index.handler"，调用 index.js（runtime为nodejs的情况下）中的exports.handler
+
+    --description (string)
+        函数说明
+
+    --environment (dict)
+        函数代码运行时的用户自定义环境变量，例如--environment={"Variables":{"env1":"evn1_value"}}
+
+OUTPUT
+    参数名称 -> (参数类型)
+        参数说明
+
+    errors -> (list)
+        错误信息
+
+    request_uuid -> (string)
+        请求uuid
+
+    result -> (dict)
+        资源详情
+
+    id -> (int)
+        唯一标识符
+
+    Description -> (string)
+        一个简短的说明，0-256字符。
+
+    FunctionBrn -> (string)
+        函数的唯一性资源标志符，1-170字符。
+
+    Timeout -> (int)
+        超时时间 1-300，最大300。
+
+    CodeSha256 -> (string)
+        函数代码包的SHA256散列。
+
+    FunctionName -> (string)
+        函数的名称，由数字、字母、-或_组成。则长度限制为64个字符。
+
+    Handler -> (string)
+        入口函数
+
+    version -> (string)
+        版本。LATEST表示最新，否则由数字组成。1-32字符。
+
+    Runtime -> (string)
+        运行时环境
+
+    MemorySize -> (int)
+        内存的大小，以MB为单位，目前只支持128MB
+
+    Environment -> (string)
+        环境变量
+
+    success -> (bool)
+        请求成功与否标志

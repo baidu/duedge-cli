@@ -1,0 +1,72 @@
+NAME
+    invoke -
+
+DESCRIPTION
+    调试函数功能
+
+SYNOPSIS
+      invoke
+    --function-name <string>
+    --method <string>
+    --url <string>
+    [--template-name <string>]
+    [--version <string>]
+    [--body <string>]
+    [--environment <dict>]
+    [--header <dict>]
+
+OPTIONS
+    --function-name (string)
+        函数名称
+    
+    --template-name (string)
+        模板名称
+        
+    --version (string)
+        函数版本
+
+    --method (string)
+        调试的method: [HEAD, GET, POST, PUT, PATCH, DELETE]
+
+    --url (string)
+        调试的url，其中host必须为已经激活的子域名
+        
+    --body (string)
+        调试设置的body
+        
+    --environment (dict)
+        调试设置的环境变量，例如--environment={"key1": "value1"}
+        
+    --header (dict)
+        调试设置的header， 例如--header={"header_key1": "header_value1"}
+
+OUTPUT
+    errors -> (list)
+        错误信息
+
+    request_uuid -> (string)
+        请求uuid
+
+    result -> (dict)
+        调试结果详情
+        
+    body -> (string)	
+    	调试返回的body
+    	
+    error_code -> (string)
+    	调试返回错误码，0为正常，其余均为异常
+    	
+    header -> (dict)	
+    	调试返回响应header
+    	
+    cost_time -> (int)	
+    	处理时间，单位是毫秒
+    	
+    log -> (string)	
+    	base64的调试日志
+    	
+    preview_key -> (string)	
+    	预览页面id
+
+    success -> (bool)
+        请求成功与否标志

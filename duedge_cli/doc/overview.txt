@@ -1,0 +1,20 @@
+BEGINNING
+        o 查看帮助文档时，Linux系统使用上下箭头滚动，Windows系统使用空格/回车滚动，q键退出
+        o 使用之前，请先执行[duedge configure]命令进行必要的配置，详细信息请执行[duedge configure help]查看 
+        o 命令行支持开头字母联想功能，例如:执行[create-function]命令，可输入[duedge c f --param1=value1 --param2=value2]
+        o 帮助文档支持开头字母联想功能，例如:查看[create-function]帮助，可输入[duedge c f help]
+        o 命令行会自动转换参数值类型(eg: "1"<string> to 1<int>)，有些情况下，需要强制将int类型的参数转为string，请这样传参：--param1='"1"'
+        o 对于包含特殊字符的参数值，请使用''进行包裹，例如--version='$LASTED'(包含$) --function-name='My Test'(包含空格)
+        o 对于布尔型的参数，请这样传参：--param1=True --param2=False
+        o 对于字典型的参数，避免使用''进行包裹、避免在:前后以及键&值中出现空格，请这样传参：--environment={"Variables":{"env1":"evn1_value1111"}}
+
+NAME
+        duedge
+
+DESCRIPTION
+        The duedge is a unified tool to manage&debug your DuEdge functions&triggers.
+
+SYNOPSIS
+        duedge <command> <parameters>
+
+COMMAND

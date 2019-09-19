@@ -1,0 +1,43 @@
+NAME
+    update-function-configuration -
+
+DESCRIPTION
+    修改函数配置
+
+SYNOPSIS
+      update-function-configuration
+    --function-name <string>
+    [--description <string>]
+    [--handler <string>]
+    [--runtime <string>]
+    [--environment <dict>]
+
+OPTIONS
+    --description (string)
+        一个简短的说明。
+
+    --handler (string)
+        入口
+
+    --runtime (string)
+        运行语言
+
+    --environment (dict)
+        环境变量，例如：--environment={"Variables":{"env1":"evn1_value1"}}
+
+OUTPUT
+    参数名称 -> (参数类型)
+        参数说明
+
+    errors -> (list)
+        错误信息
+
+    request_uuid -> (string)
+        请求uuid
+
+    result -> (dict)
+        资源详情
+
+    success -> (bool)
+        请求成功与否标志
+

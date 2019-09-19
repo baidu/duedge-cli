@@ -1,0 +1,16 @@
+NAME
+    init-function -
+
+DESCRIPTION
+    初始化本地调试函数内容
+
+SYNOPSIS
+      init-function
+    --runtime <string>
+
+OPTIONS
+    --runtime (string)
+        函数使用的语言及版本(python2, nodejs8.5, java8)
+OUTPUT
+        执行的结果信息
+
