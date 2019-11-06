@@ -1,0 +1,59 @@
+NAME
+    list-debug-logs -
+
+DESCRIPTION
+    获取日志文件列表
+    	o 只提供 30 个自然日内的日志下载，例如当前日期为 2018-09-30，则只提供 2018-09-01 ~ 2018-09-30 的日志。
+        o 日志大概延迟2小时，举例：10月01日0点-1点的日志，会在10月01日3点-4点左右可下载
+        o CDN 日志默认按小时分割，如果单小时内日志过大，超过128M会进行分割，若某个小时域名无请求，则不会产生日志数据包，日志文件采用gzip压缩
+
+SYNOPSIS
+      list-debug-logs
+    --domain-name <string>
+    --start-time <date>
+    --end-time <date>
+
+OPTIONS
+    --domain-name (string)
+        主域名称(eg: baidu.com)
+
+    --start-time (date)
+        起始时间(eg: 2019-01-01T10:00:00Z)
+        
+    --end-time (date)
+        结束时间(eg: 2019-01-01T11:00:00Z)
+
+OUTPUT
+    参数名称 -> (参数类型)
+        参数说明
+
+    errors -> (list)
+        错误信息
+
+    request_uuid -> (string)
+        请求uuid
+
+    result -> (dict)
+        资源详情
+        
+    result.create_on -> (date)
+        创建时间
+        
+    result.file_name -> (string)
+        日志文件名
+        
+    result.period_gte -> (date)
+        文件中日志开始时间
+        
+    result.period_lt -> (date)
+        文件中日志结束时间
+        
+    result.size -> (int)
+        文件大小，单位: byte
+        
+    result.url -> (string)
+        文件下载路径，可以直接访问下载，URL有效期30分钟
+
+    success -> (bool)
+        请求成功与否标志
+
