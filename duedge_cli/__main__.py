@@ -20,12 +20,14 @@ import os
 import pkg_resources
 import platform
 import re
+import shutil
 import sys
 import time
 import traceback
 import zipfile
 
 from duedge_cli import CONFIG_FILE_URL
+from duedge_cli import CODE_EXAMPLE_FILE
 from duedge_cli import CONFIG_UPDATE_INTERVAL
 from duedge_cli import HELP_FILE_URL
 from duedge_cli import HELP_OVERVIEW_FILE
@@ -93,10 +95,10 @@ class BaseCli(object):
             return
             
         if not path:
-            path = SYS_CONFIG['command_mapping_conf'][cmd]['path']
+            path = SYS_CONFIG['command_mapping_conf'][cmd]['request_builder']['path']
         
         if not url:
-            url = SYS_CONFIG['command_mapping_conf'][cmd]['url']
+            url = SYS_CONFIG['command_mapping_conf'][cmd]['request_builder']['url']
         
         querystring = {}
         payload = {}
@@ -107,7 +109,7 @@ class BaseCli(object):
         if 'GET' == method:
             querystring.update(params)
         else:
-            payload = params
+            payload.update(params)
         
         headers = get_request_header(path, querystring, payload)
         url = OPENAPI_BASE_URL % url
@@ -369,25 +371,20 @@ class DuedgeCli(BaseCli):
                 print_to_term('missing parameters')
                 return
             
-            if not runtime in ['python2', 'nodejs8.5', 'java8']:
+            if not runtime in ['Python 2', 'Node.js 10', 'Lua']:
                 print_to_term('invalid parameters')
                 return
             
-            if runtime in ['nodejs8.5']:
+            if runtime == 'Node.js 10':
                 main_file = LOCAL_FUNCTION_FILE % 'js'
-            elif runtime == 'python2':
+            elif runtime == 'Python 2':
                 main_file = LOCAL_FUNCTION_FILE % 'py'
-            elif runtime == 'java8':
-                main_file = LOCAL_FUNCTION_FILE % 'java'
+            elif runtime == 'Lua':
+                main_file = LOCAL_FUNCTION_FILE % 'lua'
                 
-            with open(main_file, 'w'):
-                pass
-            
-            with open(main_file, "r+") as f:
-                f.seek(0)
-                f.truncate()
+            func_index_file = pkg_resources.resource_filename(__name__, CODE_EXAMPLE_FILE % main_file)  
+            shutil.copyfile(func_index_file, main_file)
                 
-                f.write(os.linesep)
             print_to_term('init function succeed')
         except Exception as e:
             print_exc()
@@ -558,6 +555,21 @@ class DuedgeCli(BaseCli):
             return ''
         
         return json.dumps(json.loads(resp.text), indent=4).encode('unicode_escape').decode('unicode_escape')
+    
+    def list_debug_logs_builder(self, cmd, params):
+        """http builder for list_debug_logs
+        Args:
+            cmd: command
+            params: parameters
+        Returns:
+            Tuple:path, url, params
+        Raises:
+        """
+        
+        return '', '', {'query': 'zname:%s,create_on__gte:%s,create_on__lt:%s' % 
+                           (params.get('domain_name', ''),
+                            params.get('start_time', ''),
+                            params.get('end_time', ''))}
 
 
 def get_signature(sec_key, text):
@@ -718,11 +730,14 @@ def trans_params(cmd, params, exclude_param_keys):
     
     result_params = {}
     
+    if 'no_trans' == cmd_param_mapping['type']:
+        return params
+    
     for k, v in params.items():
         if k in exclude_param_keys:
             continue
-        
-        if  cmd_param_mapping['type'] in ['hyphen_to_hump', 'under_cross_to_hump']:
+
+        if cmd_param_mapping['type'] in ['hyphen_to_hump', 'under_cross_to_hump']:
             key = connector_to_hump(k, '_')
             result_params[key] = v
         elif 'custom' == cmd_param_mapping['type']:

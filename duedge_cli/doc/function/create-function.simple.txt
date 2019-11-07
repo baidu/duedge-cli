@@ -21,7 +21,7 @@ OPTIONS
         函数名称，命名必须符合正则 ^[a-zA-Z0-9_-]+$
 
     --runtime (string)
-        运行时环境，python2、nodejs8.5、java8
+        运行时环境，Python 2、Node.js 10、Lua
 
     --handler (string)
         函数调用的入口，格式为"文件名.方法名"，如填写 "index.handler"，调用 index.js（runtime为nodejs的情况下）中的exports.handler
@@ -44,9 +44,6 @@ OUTPUT
 
     result -> (dict)
         资源详情
-
-    id -> (int)
-        唯一标识符
 
     Description -> (string)
         一个简短的说明，0-256字符。

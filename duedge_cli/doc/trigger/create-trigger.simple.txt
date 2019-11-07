@@ -15,8 +15,6 @@ SYNOPSIS
     [--off <int>]
     [--client-request <bool>]
     [--client-response <bool>]
-    [--origin-request <bool>]
-    [--origin-response <bool>]
 
 OPTIONS
     --domain-name (string)
@@ -46,13 +44,8 @@ OPTIONS
     --client-response (bool)
         client_response触发器是否绑定函数
 
-    --origin-request (bool)
-        origin_request触发器是否绑定函数
-
-    --origin-response (bool)
-        origin_response触发器是否绑定函数
         
-    注:--client-request，--client-response，--origin-request，--origin-response至少有一个不为空
+    注:--client-request，--client-response至少有一个不为空
 
 OUTPUT
     参数名称 -> (参数类型)

@@ -17,7 +17,7 @@ import time
 
 
 # 当前版本号
-_VERSION_ = '1.0.7'
+_VERSION_ = '1.0.8'
 
 # 工作目录
 WORK_DIR = ""
@@ -38,7 +38,7 @@ HELP_FILE_URL = "http://duedge.baidu.com/cli/doc.zip"
 SIGN_METHOD = "HMAC-SHA1"
 
 # 本地函数文件名
-LOCAL_FUNCTION_FILE = WORK_DIR + 'debug_main.%s'
+LOCAL_FUNCTION_FILE = WORK_DIR + 'index.%s'
 
 # 本地配置文件名
 USR_CONFIG_FILE = WORK_DIR + '.usrconfig'
@@ -48,6 +48,9 @@ SYS_CONFIG_FILE = WORK_DIR + '.sysconfig'
 
 # 帮助文件
 HELP_OVERVIEW_FILE = WORK_DIR + 'doc/overview.txt'
+
+# 示例代码路径
+CODE_EXAMPLE_FILE = 'doc/code-example/%s'
 
 # 配置文件更新时间最大间隔(秒)
 CONFIG_UPDATE_INTERVAL = 60 * 60 * 24 * 5
