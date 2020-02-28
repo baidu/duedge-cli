@@ -1,0 +1,29 @@
+NAME
+    get-function-alias -
+
+DESCRIPTION
+    查询函数别名
+
+SYNOPSIS
+      get-function-alias
+    --alias <string>
+
+OPTIONS
+    --alias (string)
+        别名ID
+   
+OUTPUT
+    参数名称 -> (参数类型)
+        参数说明
+
+    errors -> (list)
+        错误信息
+
+    request_uuid -> (string)
+        请求uuid
+
+    result -> (dict)
+        资源详情
+
+    success -> (bool)
+        请求成功与否标志

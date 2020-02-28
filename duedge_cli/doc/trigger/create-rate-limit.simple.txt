@@ -1,0 +1,71 @@
+NAME
+    create-rate-limit -
+
+DESCRIPTION
+    创建速率限制配置	
+
+SYNOPSIS
+      create-rate-limit
+    --threshold <int>
+    --period <int>
+    --ttl <int>
+    --action <string>
+    --description <string>
+    --action-object <string>
+    [--enable <int>]
+    [--match <string>]
+    [--meta-alias <string>]
+
+OPTIONS
+    --enable (string)
+        是否启用
+
+    --threshold (int)
+        窗口内计数超过多少次，会触发超限状态
+
+    --period (int)
+        计数窗口长度，秒为单位
+
+    --ttl (int)
+        执行动作的持续时间
+
+    --action (string)
+        执行动作 function
+        
+    --description (string)
+        描述
+
+    --match (string)
+        匹配条件 json字符串，eg：
+        {
+          "req": {
+            "method": 63,
+            "scheme": 3,
+            "url": "www.mockbc.com/000",
+            "shitong": 31,
+            "secsdk": 0
+          }
+        }
+
+    --meta-alias (string)
+        函数别名ID
+
+    --action-object (string)
+        域名ID
+
+OUTPUT
+    参数名称 -> (参数类型)
+        参数说明
+
+    errors -> (list)
+        错误信息
+
+    request_uuid -> (string)
+        请求uuid
+
+    result -> (dict)
+        资源详情
+
+    success -> (bool)
+        请求成功与否标志
+

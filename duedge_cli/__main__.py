@@ -570,6 +570,25 @@ class DuedgeCli(BaseCli):
                            (params.get('domain_name', ''),
                             params.get('start_time', ''),
                             params.get('end_time', ''))}
+        
+    def list_function_aliases_builder(self, cmd, params):
+        """http builder for list_debug_logs
+        Args:
+            cmd: command
+            params: parameters
+        Returns:
+            Tuple:path, url, params
+        Raises:
+        """
+        result_params = {}
+#         result_params['per_page'] = 999
+#         result_params['page'] = 1
+#         result_params['sortby'] = 'modified_on'
+#         result_params['order'] = 'desc'
+#         result_params['type'] = 'alias'
+        result_params['query'] = 'name:%s' % params.get('name', '')
+        
+        return '', '', result_params
 
 
 def get_signature(sec_key, text):

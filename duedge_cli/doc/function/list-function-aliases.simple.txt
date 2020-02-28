@@ -1,0 +1,29 @@
+NAME
+    list-function-aliases -
+
+DESCRIPTION
+    查询函数别名列表
+
+SYNOPSIS
+      list-function-aliases
+    --name <string>
+
+OPTIONS
+    --name (string)
+        函数名称
+   
+OUTPUT
+    参数名称 -> (参数类型)
+        参数说明
+
+    errors -> (list)
+        错误信息
+
+    request_uuid -> (string)
+        请求uuid
+
+    result -> (dict)
+        资源详情
+
+    success -> (bool)
+        请求成功与否标志

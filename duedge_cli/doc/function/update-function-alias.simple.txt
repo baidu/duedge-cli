@@ -1,0 +1,57 @@
+NAME
+    update-function-alias -
+
+DESCRIPTION
+    更新函数别名
+
+SYNOPSIS
+      update-function-alias
+    --alias <string>
+    [--name <string>]
+    [--main-version <string>]
+    [--alias-name <string>]
+    [--shunt-mode <string>]
+    [--gray-version <string>]
+    [--gray-version-weight <int>]
+    [--alias-intro <string>]
+
+OPTIONS
+    --alias (string)
+        函数别名ID
+
+    --name (string)
+        函数名称，命名必须符合正则 ^[a-zA-Z0-9_-]+$
+
+    --main-version (string)
+        函数主版本
+        
+    --alias-name (string)
+        函数别名
+
+    --shunt-mode (string)
+        分流模式 random, clientIP
+
+    --gray-version (string)
+        函数灰度版本
+
+    --gray-version-weight (string)
+        权重
+        
+    --alias-intro (string)
+        别名描述
+
+OUTPUT
+    参数名称 -> (参数类型)
+        参数说明
+
+    errors -> (list)
+        错误信息
+
+    request_uuid -> (string)
+        请求uuid
+
+    result -> (dict)
+        资源详情
+
+    success -> (bool)
+        请求成功与否标志

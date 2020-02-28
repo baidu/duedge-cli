@@ -17,7 +17,7 @@ import time
 
 
 # 当前版本号
-_VERSION_ = '1.0.8'
+_VERSION_ = '1.0.9'
 
 # 工作目录
 WORK_DIR = ""
