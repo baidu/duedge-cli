@@ -11,6 +11,7 @@ SYNOPSIS
     [--description <string>]
     [--function-brn <string>]
     [--function-name <string>]
+    [--function-alias <string>]
     [--version <string>]
     [--off <int>]
     [--client-request <bool>]
@@ -31,9 +32,14 @@ OPTIONS
 
     --function-name (string)
         函数名
+        
+    --function-alias (string)
+        函数别名ID
+            (function-alias和version不可同时指定)
+            (指定function-alias时，必需同时指定function-name)
 
     --version (string)
-        函数版本(function-brn或者function-name + version 必须至少有一个不为空)
+        函数版本(function-brn,或者function-name + version,必须至少有一个不为空)
 
     --off (int)
         开关，0-开，1-关

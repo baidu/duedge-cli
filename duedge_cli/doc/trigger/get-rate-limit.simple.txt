@@ -1,0 +1,30 @@
+NAME
+    get-rate-limit -
+
+DESCRIPTION
+    创建速率限制配置	
+
+SYNOPSIS
+      get-rate-limit
+    --rate-limit-id <int>
+
+OPTIONS
+    --rate-limit-id <int>
+        唯一标识
+
+OUTPUT
+    参数名称 -> (参数类型)
+        参数说明
+
+    errors -> (list)
+        错误信息
+
+    request_uuid -> (string)
+        请求uuid
+
+    result -> (dict)
+        资源详情
+
+    success -> (bool)
+        请求成功与否标志
+

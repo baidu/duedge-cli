@@ -1,0 +1,66 @@
+NAME
+    update-rate-limit -
+
+DESCRIPTION
+    更新速率限制配置	
+
+SYNOPSIS
+      update-rate-limit
+    --rate-limit-id <int>
+    [--enable <int>]
+    [--threshold <int>]
+    [--period <int>]
+    [--ttl <int>]
+    [--action <string>]
+    [--description <string>]
+    [--match <string>]
+    [--meta-alias <string>]
+    [--action-object <string>]
+
+OPTIONS
+    --rate-limit-id (int)
+        唯一标识
+        
+    --enable (string)
+        是否启用
+
+    --threshold (int)
+        阀值
+
+    --period (int)
+        间隔
+
+    --ttl (int)
+        生命周期
+
+    --action (string)
+        执行动作 function
+        
+    --description (string)
+        描述
+
+    --match (string)
+        匹配条件
+
+    --meta-alias (string)
+        函数别名ID
+
+    --action-object (string)
+        域名ID
+
+OUTPUT
+    参数名称 -> (参数类型)
+        参数说明
+
+    errors -> (list)
+        错误信息
+
+    request_uuid -> (string)
+        请求uuid
+
+    result -> (dict)
+        资源详情
+
+    success -> (bool)
+        请求成功与否标志
+
